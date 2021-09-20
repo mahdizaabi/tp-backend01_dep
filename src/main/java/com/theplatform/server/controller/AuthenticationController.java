@@ -80,11 +80,11 @@ public class AuthenticationController {
         final String jwt = jwtUtil.generateToken(userDetails);
         httpServletResponse.setHeader("Authorization", jwt);
         Cookie cookie = new Cookie("_jwt", jwt);
-        //cookie.setPath("/api");
+        cookie.setPath("/api");
         cookie.setSecure(true);
         cookie.setMaxAge(86400); // expire in 1 day
-        //cookie.setDomain("tpbackend01.azurewebsites.net");
-        //cookie.setHttpOnly(true);
+        cookie.setDomain("tpbackend01.azurewebsites.net");
+        cookie.setHttpOnly(true);
         httpServletResponse.addCookie(cookie);
         httpServletResponse.addHeader("Access-Control-Allow-Credentials", "true");
         return new ResponseEntity<>(new AuthenticationResponse(jwt, userDetails.getUsername(), roles), HttpStatus.ACCEPTED);
