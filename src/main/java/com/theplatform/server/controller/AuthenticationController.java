@@ -82,8 +82,8 @@ public class AuthenticationController {
         httpServletResponse.setHeader("Authorization", jwt);
         Cookie cookie = new Cookie("_jwt", jwt);
         cookie.setPath("/");
-        cookie.setSecure(false);
-        cookie.setDomain("localhost");
+        cookie.setSecure(true);
+        cookie.setDomain("the-platform-rd6o8mcv9-mahdizaabi.vercel.app");
         cookie.setHttpOnly(false);
         httpServletResponse.addCookie(cookie);
         httpServletResponse.addHeader("Access-Control-Allow-Credentials", "true");
