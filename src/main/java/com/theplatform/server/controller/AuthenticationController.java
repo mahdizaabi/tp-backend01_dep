@@ -80,10 +80,10 @@ public class AuthenticationController {
         final String jwt = jwtUtil.generateToken(userDetails);
         httpServletResponse.setHeader("Authorization", jwt);
         Cookie cookie = new Cookie("_jwt", jwt);
-        //cookie.setPath("/");
+        cookie.setPath("/api");
         cookie.setSecure(true);
         cookie.setMaxAge(86400); // expire in 1 day
-        //cookie.setDomain("the-platform-rd6o8mcv9-mahdizaabi.vercel.app");
+        cookie.setDomain("the-platform-rd6o8mcv9-mahdizaabi.vercel.app");
         cookie.setHttpOnly(false);
         httpServletResponse.addCookie(cookie);
         httpServletResponse.addHeader("Access-Control-Allow-Credentials", "true");
