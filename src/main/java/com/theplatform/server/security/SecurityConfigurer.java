@@ -26,7 +26,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
                 .authorizeRequests().antMatchers(
                         "/auth","/api/register","/loogout",
-                "/api/login","/api/reset-password","/api/course/*","/api/course/{slug}/**",
+                "/api/loogin","/api/reset-password","/api/course/*","/api/course/{slug}/**",
                 "/api/forgot-password", "/check-code","/api/course/index/getallcourses"
         ).permitAll()
                 .and().authorizeRequests().antMatchers(HttpMethod.GET, "/testguest","/api/checkuser","/api/course/index/getallcourses",

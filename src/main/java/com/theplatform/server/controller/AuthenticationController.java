@@ -64,7 +64,7 @@ public class AuthenticationController {
         return new ResponseEntity<>(savedUserDto, null, HttpStatus.CREATED);
     }
 
-    @PostMapping("/login")
+    @PostMapping("/loogin")
     public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequest authenticationRequest,
                                           HttpServletResponse httpServletResponse) throws Exception {
         try {
