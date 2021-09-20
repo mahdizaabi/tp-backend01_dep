@@ -74,7 +74,6 @@ public class AuthenticationController {
             exc.printStackTrace();
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
         }
-
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
         User user = userService.getUserByUsername(authenticationRequest.getUsername());
         List<String> roles = user.getRoles().stream().map(Role::getName).collect(Collectors.toList());
@@ -83,7 +82,7 @@ public class AuthenticationController {
         Cookie cookie = new Cookie("_jwt", jwt);
         cookie.setPath("/");
         cookie.setSecure(true);
-        cookie.setDomain("the-platform-rd6o8mcv9-mahdizaabi.vercel.app");
+        cookie.setDomain("https://the-platform-rd6o8mcv9-mahdizaabi.vercel.app");
         cookie.setHttpOnly(false);
         httpServletResponse.addCookie(cookie);
         httpServletResponse.addHeader("Access-Control-Allow-Credentials", "true");
