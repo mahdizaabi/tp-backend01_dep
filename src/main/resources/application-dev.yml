@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/the_platform?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-    username: root
-    password: mahdi
+    url: jdbc:mysql://mysqlsv.mysql.database.azure.com:3306/tpdbx?serverTimezone=UTC
+    username: mahdi@mysqlsv
+    password: Idhamibaaz14
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
