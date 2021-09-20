@@ -52,9 +52,9 @@ public class AuthenticationController {
 
     @PostMapping(path = "/register")
     public ResponseEntity<?> RegisterUser(@RequestBody UserDto userDto) {
+        System.out.println("xxxxxxxxxxx");
 
         User user = UserDtoConverter.DtoToUserConverter(userDto);
-        System.out.println("xxxxxxxxxxx");
         if (userService.checkIfUserAlreadyExists(user.getUsername(), user.getEmail())) {
             return new ResponseEntity<String>("User Already Exist", HttpStatus.CONFLICT);
         }
