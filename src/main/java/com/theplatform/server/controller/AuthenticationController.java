@@ -82,6 +82,7 @@ public class AuthenticationController {
         Cookie cookie = new Cookie("_jwt", jwt);
         cookie.setPath("/");
         cookie.setSecure(true);
+        cookie.setMaxAge(86400); // expire in 1 day
         cookie.setDomain("the-platform-rd6o8mcv9-mahdizaabi.vercel.app");
         cookie.setHttpOnly(false);
         httpServletResponse.addCookie(cookie);
