@@ -83,7 +83,7 @@ public class AuthenticationController {
         //cookie.setPath("/api");
         cookie.setSecure(true);
         //cookie.setMaxAge(86400); // expire in 1 day
-        //cookie.setDomain("tpbackend01.azurewebsites.net");
+        cookie.setDomain("tpbackend01.azurewebsites.net");
         //cookie.setHttpOnly(true);
         httpServletResponse.addCookie(cookie);
         httpServletResponse.addHeader("Access-Control-Allow-Credentials", "true");
